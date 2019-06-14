@@ -1,6 +1,6 @@
 {%extends "base.html"%}
 {%block content%}
-
+<div class="container">
 {%if get_address%}
 <form method = "POST">
 	{% csrf_token %}
@@ -30,7 +30,7 @@
     <input type="hidden" value="{{get_address.id}}" name="id">
   </div>
 
-  <button type="submit" class="btn btn-primary">Edit</button>
+  <button type="submit" class="btn btn-primary">Update</button>
 </form>
 <br>
 <form method="POST" action="{% url 'delete' get_address.id%}">
@@ -40,4 +40,5 @@
 </form>
 
 {%endif%}
+</div>
 {%endblock%}
